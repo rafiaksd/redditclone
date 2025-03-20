@@ -140,7 +140,7 @@ const PostTracker = ({ children }) => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/redditclone">
       <AuthProvider>
         <PostTracker>
           <Routes>
