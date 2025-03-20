@@ -37,8 +37,8 @@ A full-stack Reddit clone built with MongoDB, Node.js, Express, and React.
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd reddit-clone
+git clone https://github.com/rafiaksd/redditclone
+cd redditclone
 ```
 
 2. Install backend dependencies:
