@@ -1,12 +1,99 @@
-# React + Vite
+# Reddit Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Reddit clone built with MongoDB, Node.js, Express, and React.
 
-Currently, two official plugins are available:
+## Features
+- User authentication (register, login, logout)
+- Create, read, update, and delete posts
+- Upvote and downvote posts
+- Comment on posts
+- Nested comments with replies
+- Responsive design with Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+### Backend
+- Node.js with Express
+- MongoDB with Mongoose
+- JWT for authentication
+- CORS for cross-origin requests
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+- React with Vite
+- React Router for navigation
+- Context API for state management
+- Axios for API requests
+- Tailwind CSS for styling
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd reddit-clone
+```
+
+2. Install backend dependencies:
+```bash
+cd backend
+npm install
+```
+
+3. Install frontend dependencies:
+```bash
+cd ../frontend
+npm install
+```
+
+4. Create a `.env` file in the backend directory with the following variables:
+```
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
+
+5. Start the backend server:
+```bash
+cd backend
+npm run dev
+```
+
+6. Start the frontend development server:
+```bash
+cd frontend
+npm run dev
+```
+
+The application will be available at `[Reddit Clone GitHub](https://rafiaksd.github.io/redditclone)`.
+
+## API Endpoints
+
+### Authentication
+- POST `/api/auth/register` - Register a new user
+- POST `/api/auth/login` - Login user
+- GET `/api/auth/me` - Get current user
+
+### Posts
+- GET `/api/posts` - Get all posts
+- GET `/api/posts/:id` - Get a single post
+- POST `/api/posts` - Create a new post
+- PUT `/api/posts/:id` - Update a post
+- DELETE `/api/posts/:id` - Delete a post
+- POST `/api/posts/:id/upvote` - Upvote a post
+- POST `/api/posts/:id/downvote` - Downvote a post
+
+### Comments
+- GET `/api/posts/:id/comments` - Get comments for a post
+- POST `/api/posts/:id/comments` - Create a new comment
+- PUT `/api/comments/:id` - Update a comment
+- DELETE `/api/comments/:id` - Delete a comment
+- POST `/api/comments/:id/upvote` - Upvote a comment
+- POST `/api/comments/:id/downvote` - Downvote a comment
